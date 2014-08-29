@@ -8,6 +8,14 @@
 </head>
 <body>
 <header>
+	  <% if user_signed_in? %>
+	  	<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+	  	<% else %>
+	  	<%= link_to 'Sign In', new_user_session_path %>
+	  <% end %>
+
+
+	
   <h1><%= link_to 'ts', tshirts_path %></h1>
   <%= link_to 'New Tshirt', new_tshirt_path %>
 </header>
